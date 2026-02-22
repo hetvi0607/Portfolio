@@ -3,283 +3,481 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hetvi Mistry • Portfolio</title>
-  <meta name="description" content="Portfolio of Hetvi Mistry – Python & Web Developer with interests in AI/ML and Graphic Design." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>AIVORA | AI Automation Agency for Indian and Global Businesses</title>
+  <meta name="description" content="AIVORA helps startups, SMEs, and enterprises automate operations, improve productivity, and scale with practical AI solutions across India and worldwide." />
+  <meta name="keywords" content="AI agency India, AI automation services, custom AI chatbot, AI consulting, workflow automation, AI marketing" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
   <style>
-    :root{
-      --bg: #0b0f14;
-      --card: #10161d;
-      --muted: #94a3b8;
-      --text: #e6edf3;
-      --accent: #16a34a; /* emerald/green */
-      --accent-2: #22c55e;
-      --border: #1f2937;
-      --chip: #0f172a;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    :root {
+      --bg: #070b14;
+      --surface: #0e1421;
+      --surface-soft: #121a2a;
+      --text: #e8edf8;
+      --muted: #a7b2c9;
+      --border: #25304a;
+      --primary: #6d8dff;
+      --primary-strong: #5a7cff;
+      --accent: #43d4b7;
       --radius: 16px;
+      --shadow: 0 16px 40px rgba(4, 10, 26, 0.45);
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;}
-    a{color:inherit;text-decoration:none}
-    .container{max-width:1100px;margin:0 auto;padding:24px}
-    header.nav{
-      position:sticky;top:0;z-index:50;background:rgba(11,15,20,.7);backdrop-filter: blur(8px);border-bottom:1px solid var(--border)
+
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle at 15% 10%, #101a31 0%, var(--bg) 35%), var(--bg);
+      color: var(--text);
+      font-family: Manrope, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      scroll-behavior: smooth;
     }
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
-    .brand{font-weight:800;letter-spacing:.5px}
-    .brand .dot{color:var(--accent)}
-    .nav-links{display:flex;gap:18px;flex-wrap:wrap}
-    .nav-links a{font-weight:600;opacity:.9}
-    .nav-links a:hover{color:var(--accent)}
 
-    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;padding:38px 0}
-    .hero-card{background:linear-gradient(180deg,#0e141b,#0a0e13);border:1px solid var(--border);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
-    .kicker{display:inline-flex;align-items:center;gap:8px;color:var(--accent-2);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:1px;background:#052e16;border:1px solid #14532d;padding:6px 10px;border-radius:999px}
-    h1{font-size:40px;line-height:1.1;margin:14px 0 10px}
-    .subtitle{color:var(--muted);font-size:16px;line-height:1.6}
-    .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
-    .btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#07170c;border:0;padding:12px 16px;border-radius:12px;font-weight:800}
-    .btn:hover{filter:brightness(1.05)}
-    .btn.ghost{background:transparent;color:var(--text);border:1px solid var(--border)}
+    a { color: inherit; text-decoration: none; }
 
-    .panel{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
-    .section{padding:16px 0 28px}
-    .section h2{margin:0 0 14px;font-size:22px}
+    .container {
+      width: min(1160px, 92vw);
+      margin: 0 auto;
+    }
 
-    .chips{display:flex;flex-wrap:wrap;gap:8px}
-    .chip{background:var(--chip);border:1px solid var(--border);padding:8px 12px;border-radius:999px;color:#cbd5e1;font-weight:600;font-size:13px}
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(7, 11, 20, 0.86);
+      border-bottom: 1px solid rgba(109, 141, 255, 0.2);
+    }
 
-    .grid{display:grid;gap:16px}
-    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
-    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
-    .card{background:linear-gradient(180deg,#0e1319,#0b1016);border:1px solid var(--border);border-radius:14px;padding:18px}
-    .card h3{margin:0 0 6px;font-size:18px}
-    .card p{margin:0;color:#b4c0cf}
-    .meta{color:#9fb0c6;font-size:12px;margin-top:8px}
+    .topbar .inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 14px 0;
+    }
 
-    .timeline{display:grid;gap:12px}
-    .item{display:grid;gap:6px;padding:14px;border:1px solid var(--border);border-radius:12px;background:#0b1118}
-    .item .role{font-weight:700}
-    .item .where{color:#9fb0c6}
+    .brand {
+      font-family: "Space Grotesk", sans-serif;
+      letter-spacing: 0.8px;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
 
-    footer{padding:26px 0;color:#9fb0c6;border-top:1px solid var(--border);margin-top:28px}
+    .brand span { color: var(--accent); }
 
-    /* Responsive */
-    @media (max-width: 880px){
-      .hero{grid-template-columns:1fr}
+    .nav {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-weight: 600;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .nav a:hover { color: var(--text); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: 12px;
+      padding: 12px 18px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-strong) 100%);
+      color: #fff;
+      box-shadow: 0 10px 20px rgba(90, 124, 255, 0.35);
+    }
+
+    .btn-primary:hover { transform: translateY(-1px); }
+
+    .btn-secondary {
+      border-color: var(--border);
+      background: rgba(18, 26, 42, 0.45);
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 88px 0 44px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(14, 20, 33, 0.95), rgba(9, 14, 24, 0.95));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .kicker {
+      display: inline-block;
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 0.9px;
+      text-transform: uppercase;
+      font-size: 0.76rem;
+      margin-bottom: 14px;
+    }
+
+    h1, h2, h3 { margin-top: 0; }
+    h1 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(2rem, 4.2vw, 3.3rem);
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      font-size: clamp(1.5rem, 2.8vw, 2rem);
+      margin-bottom: 14px;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin-top: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .stat {
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.35rem;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    section { padding: 26px 0; }
+
+    .section-title { margin-bottom: 18px; }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    ul.clean {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    ul.clean li {
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(18, 26, 42, 0.62);
+      color: #ced8ed;
+      font-weight: 500;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      background: #0d1424;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text);
+      font: inherit;
+      padding: 12px;
+    }
+
+    textarea { min-height: 120px; resize: vertical; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 36px;
+      padding: 24px 0 38px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 980px) {
+      .hero, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .topbar .inner { align-items: flex-start; }
+      .nav { font-size: 0.88rem; }
     }
   </style>
 </head>
 <body>
-  <header class="nav">
-    <div class="container nav-inner">
-      <div class="brand">hetvi<span class="dot">.</span>mistry</div>
-      <nav class="nav-links">
+  <header class="topbar">
+    <div class="container inner">
+      <a href="#home" class="brand">AI<span>VORA</span></a>
+      <nav class="nav">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#industries">Industries</a>
         <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
+        <a href="#why-aivora">Why Choose AIVORA</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <main class="container">
-    <!-- HERO -->
-    <section class="hero" id="home">
-      <div class="hero-card">
-        <span class="kicker">Open to Internships & Roles</span>
-        <h1>Hi, I’m Hetvi —
-          a developer with an eye for clean UI and practical problem‑solving.</h1>
-        <p class="subtitle">
-          Diploma in IT (R. C. Technical Institute) and currently pursuing B.Tech IT (SAL, 2nd year).
-          Hands‑on experience from internships in Web Dev (Infolabz) and React JS (Stypix). Certifications in
-          Google Analytics, NPTEL Python for Data Science, AWS fundamentals, and TCS Job Simulation.
+    <section id="home" class="hero">
+      <article class="card">
+        <span class="kicker">AI Consulting and Automation Agency</span>
+        <h1>H1: Scale Faster with Practical AI Solutions Built for Real Business Growth</h1>
+        <p>
+          AIVORA helps Indian and international businesses automate repetitive work, improve productivity, and unlock new revenue opportunities through custom AI systems. We combine strategy, execution, and support so non-technical teams can adopt AI confidently and see measurable outcomes quickly.
         </p>
-        <div class="cta">
-          <a class="btn" href="#projects">View Projects</a>
-          <a class="btn ghost" href="mailto:hetvi.mistry.25@gmail.com">Email Me</a>
+        <div class="actions">
+          <a class="btn btn-primary" href="#contact">Book a Call</a>
+          <a class="btn btn-secondary" href="#contact">Get Free Consultation</a>
         </div>
-      </div>
-      <div class="panel">
-        <h2>Quick Facts</h2>
-        <div class="grid cols-2">
-          <div class="card">
-            <h3>Location</h3>
-            <p>Ahmedabad, Gujarat, India</p>
+      </article>
+      <aside class="card">
+        <h2>H2: AI Outcomes That Matter</h2>
+        <div class="stats">
+          <div class="stat">
+            <strong>40%+</strong>
+            <p>Average reduction in manual operations with workflow automation.</p>
           </div>
-          <div class="card">
-            <h3>CGPA</h3>
-            <p>8.37</p>
+          <div class="stat">
+            <strong>24/7</strong>
+            <p>Customer response with AI chatbots for sales and support.</p>
           </div>
-          <div class="card">
-            <h3>Interests</h3>
-            <p>Python • Frontend • AI/ML • Graphic Design</p>
+          <div class="stat">
+            <strong>Faster ROI</strong>
+            <p>Focused implementation roadmap designed for business impact.</p>
           </div>
-          <div class="card">
-            <h3>Contact</h3>
-            <p>+91 73836 32801 • hetvi.mistry.25@gmail.com</p>
+          <div class="stat">
+            <strong>Global Ready</strong>
+            <p>Built for multilingual audiences and cross-border scale.</p>
           </div>
         </div>
-      </div>
+      </aside>
     </section>
 
-    <!-- ABOUT -->
-    <section class="section" id="about">
-      <h2>About</h2>
-      <div class="panel">
-        <p style="margin:0;color:#cbd5e1;line-height:1.7">
-          I enjoy turning ideas into working products. My background blends development and design —
-          I build with HTML/CSS/JS and React, automate with Python, and keep usability front and center.
-          I like teams that ship, learn, and iterate.
-        </p>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section class="section" id="skills">
-      <h2>Skills</h2>
-      <div class="panel">
-        <div class="chips" aria-label="skills-list">
-          <span class="chip">HTML</span>
-          <span class="chip">CSS</span>
-          <span class="chip">JavaScript</span>
-          <span class="chip">React JS</span>
-          <span class="chip">Bootstrap</span>
-          <span class="chip">Python</span>
-          <span class="chip">MySQL</span>
-          <span class="chip">AWS (EC2, S3, IAM)</span>
-          <span class="chip">Google Analytics</span>
-          <span class="chip">Git & GitHub</span>
-          <span class="chip">Problem Solving</span>
-          <span class="chip">Communication</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section class="section" id="projects">
-      <h2>Projects</h2>
-      <div class="grid cols-3">
+    <section aria-label="home overview" class="section-title">
+      <h2>H2: AIVORA at a Glance</h2>
+      <div class="grid-3">
         <article class="card">
-          <h3>Personal Expense Tracker</h3>
-          <p>Python app with SQLite & Matplotlib to log, categorize, and visualize monthly spending.</p>
-          <p class="meta">Python • SQLite • Matplotlib</p>
+          <h3>H3: Automation and Efficiency</h3>
+          <p>We remove repetitive bottlenecks in operations, sales, HR, and marketing so teams can focus on strategic work.</p>
         </article>
         <article class="card">
-          <h3>Optical Character Recognition</h3>
-          <p>Text extraction from images/PDFs using Tesseract & OpenCV with preprocessing pipeline.</p>
-          <p class="meta">Python • OpenCV • Tesseract</p>
+          <h3>H3: Cost Optimization</h3>
+          <p>Our AI-first workflows reduce dependency on manual processes, lower operational overhead, and improve output quality.</p>
         </article>
         <article class="card">
-          <h3>Way to Interior</h3>
-          <p>Responsive portfolio site for an interior brand with clean components and contact flow.</p>
-          <p class="meta">HTML • CSS • JS</p>
-        </article>
-        <article class="card">
-          <h3>Netflix Clone</h3>
-          <p>Front‑end clone with content grid, modals, and responsive layout; API‑ready structure.</p>
-          <p class="meta">React • TMDB‑ready</p>
-        </article>
-        <article class="card">
-          <h3>WhatsApp Clone</h3>
-          <p>UI prototype with chat list & message view; componentized for future realtime integration.</p>
-          <p class="meta">React • CSS Modules</p>
-        </article>
-        <article class="card">
-          <h3>Mini Automation Scripts</h3>
-          <p>Utilities for file renaming, CSV cleanup, and simple report generation.</p>
-          <p class="meta">Python • CLI</p>
+          <h3>H3: Scalable Growth</h3>
+          <p>We design systems that start lean for startups and scale robustly for enterprises with compliance and governance needs.</p>
         </article>
       </div>
     </section>
 
-    <!-- EXPERIENCE -->
-    <section class="section" id="experience">
-      <h2>Experience</h2>
-      <div class="timeline">
-        <div class="item">
-          <div class="role">AI Intern</div>
-          <div class="where">GFuture Tech Pvt. Ltd • Ahmedabad</div>
-          <div class="meta">Exposure to data prep, basic model training, and evaluation with Python/ML libs.</div>
-        </div>
-        <div class="item">
-          <div class="role">React JS Intern</div>
-          <div class="where">Stypix</div>
-          <div class="meta">Built reusable components, managed state, and integrated APIs for dynamic UIs.</div>
-        </div>
-        <div class="item">
-          <div class="role">Web Developer Intern</div>
-          <div class="where">Infolabz</div>
-          <div class="meta">Created responsive pages with HTML/CSS/Bootstrap; collaborated with design/content.</div>
-        </div>
+    <section id="services">
+      <h2>H2: Services Page | AI Services Designed for Business Results</h2>
+      <div class="grid-2">
+        <article class="card">
+          <h3>H3: AI Automation Solutions</h3>
+          <p>End-to-end automation for business workflows including lead capture, onboarding, approvals, reporting, and client communication.</p>
+        </article>
+        <article class="card">
+          <h3>H3: Custom AI Chatbots</h3>
+          <p>Intelligent chatbots for sales, support, WhatsApp, and websites to qualify leads, answer FAQs, and improve response speed.</p>
+        </article>
+        <article class="card">
+          <h3>H3: AI for Marketing</h3>
+          <p>AI-powered lead generation systems, content automation, campaign insights, and personalized outreach for better conversion rates.</p>
+        </article>
+        <article class="card">
+          <h3>H3: AI for HR and Recruitment</h3>
+          <p>Resume screening, interview scheduling, candidate engagement, and recruitment analytics to reduce hiring cycles and improve quality.</p>
+        </article>
+        <article class="card">
+          <h3>H3: AI for Data Analysis and Business Insights</h3>
+          <p>Dashboards and predictive insights that transform raw data into decisions for growth, retention, and operational planning.</p>
+        </article>
+        <article class="card">
+          <h3>H3: Workflow Automation</h3>
+          <p>CRM, email, reporting, finance, and operations automation using secure integrations that fit your existing tools and processes.</p>
+        </article>
+        <article class="card">
+          <h3>H3: Custom AI Solutions for Enterprises</h3>
+          <p>Tailored AI architecture, private deployments, governance support, and advanced integrations for enterprise-grade transformation.</p>
+        </article>
       </div>
     </section>
 
-    <!-- EDUCATION -->
-    <section class="section" id="education">
-      <h2>Education</h2>
-      <div class="grid cols-2">
-        <div class="card">
-          <h3>B.Tech in Information Technology</h3>
-          <p>SAL Engineering Technical & Institute – 2nd Year</p>
-          <p class="meta">2023 – Present</p>
-        </div>
-        <div class="card">
-          <h3>Diploma in Information Technology</h3>
-          <p>R. C. Technical Institute</p>
-          <p class="meta">CGPA: 8.37</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- CERTIFICATIONS -->
-    <section class="section" id="certs">
-      <h2>Certifications</h2>
-      <div class="panel">
-        <ul style="margin:0;padding-left:18px;color:#cbd5e1;line-height:1.8">
-          <li>Google Analytics Certification</li>
-          <li>NPTEL – Python for Data Science</li>
-          <li>AWS Fundamentals</li>
-          <li>TCS Job Simulation</li>
+    <section id="industries">
+      <h2>H2: Industries We Serve</h2>
+      <div class="card">
+        <ul class="clean">
+          <li>Startups building lean teams and requiring rapid execution.</li>
+          <li>E-commerce brands optimizing catalogs, support, and retention.</li>
+          <li>Real estate firms automating lead qualification and follow-up.</li>
+          <li>Healthcare providers improving scheduling, documentation, and support workflows.</li>
+          <li>Education organizations streamlining admissions, learning support, and student communication.</li>
+          <li>Finance teams enhancing reporting accuracy and operational compliance workflows.</li>
+          <li>Marketing agencies scaling campaign delivery and performance analytics.</li>
+          <li>Local Indian businesses modernizing operations with affordable AI systems.</li>
+          <li>Global service providers building reliable, multilingual, and scalable client delivery.</li>
         </ul>
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section class="section" id="contact">
-      <h2>Contact</h2>
-      <div class="panel">
-        <p style="margin:0 0 14px;color:#cbd5e1">I’m open to internships and entry‑level roles. The fastest way to reach me is email or phone.</p>
-        <div class="chips">
-          <a class="chip" href="mailto:hetvi.mistry.25@gmail.com">hetvi.mistry.25@gmail.com</a>
-          <a class="chip" href="tel:+917383632801">+91 73836 32801</a>
-          <a class="chip" href="#" onclick="alert('Add your Google Drive/Dropbox resume link here!');return false;">Download Resume</a>
-          <a class="chip" href="#home">Back to top ↑</a>
-        </div>
+    <section id="about">
+      <h2>H2: About AIVORA</h2>
+      <div class="grid-2">
+        <article class="card">
+          <h3>H3: Vision</h3>
+          <p>To make AI a practical growth engine for every business, from local Indian companies to global enterprises.</p>
+          <h3>H3: Mission</h3>
+          <p>To deliver reliable, measurable, and scalable AI implementations that improve productivity, reduce costs, and drive long-term performance.</p>
+        </article>
+        <article class="card">
+          <h3>H3: How We Work</h3>
+          <p>
+            AIVORA brings a global mindset with Indian execution strength: fast turnaround, transparent communication, and performance-focused delivery.
+            We take a client-first approach by aligning every recommendation with your business goals, team capacity, and market realities.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="why-aivora">
+      <h2>H2: Why Choose AIVORA</h2>
+      <div class="grid-3">
+        <article class="card"><h3>H3: AI-First Strategy</h3><p>Every roadmap starts with where AI can create the fastest measurable impact for your business.</p></article>
+        <article class="card"><h3>H3: Custom Solutions</h3><p>No generic templates. We build systems around your operations, goals, and customer journey.</p></article>
+        <article class="card"><h3>H3: India-Friendly and Global-Ready</h3><p>Affordable execution for Indian businesses, scalable architecture for international growth.</p></article>
+        <article class="card"><h3>H3: Fast Deployment</h3><p>Structured onboarding and agile delivery reduce time to value without compromising quality.</p></article>
+        <article class="card"><h3>H3: Dedicated Support</h3><p>Hands-on post-launch support, optimization, and training for sustainable adoption.</p></article>
+      </div>
+    </section>
+
+    <section>
+      <h2>H2: Website Design Suggestions</h2>
+      <div class="grid-2">
+        <article class="card">
+          <h3>H3: Color Palette</h3>
+          <p>Primary: #6D8DFF, Accent: #43D4B7, Background: #070B14, Surface: #0E1421, Neutral Text: #E8EDF8 and #A7B2C9.</p>
+          <h3>H3: Font Suggestions</h3>
+          <p>Heading Font: Space Grotesk for a futuristic premium identity. Body Font: Manrope for clarity and trust.</p>
+        </article>
+        <article class="card">
+          <h3>H3: UI and UX Style</h3>
+          <p>Use clean layouts, clear visual hierarchy, high contrast cards, and focused calls-to-action above and below key content blocks.</p>
+          <h3>H3: Layout Structure</h3>
+          <p>Hero with primary CTA, benefit cards, services grid, industry blocks, trust section, and conversion-focused contact form.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>H2: CTA Copy Library and Lead Magnet Ideas</h2>
+      <div class="grid-2">
+        <article class="card">
+          <h3>H3: High-Converting CTA Buttons</h3>
+          <ul class="clean">
+            <li>Book a Free AI Strategy Call</li>
+            <li>Get Your Custom Automation Plan</li>
+            <li>Talk to an AI Consultant</li>
+            <li>Request a Workflow Audit</li>
+            <li>Start Your AI Transformation</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>H3: Lead Magnet Ideas</h3>
+          <ul class="clean">
+            <li>Free AI Readiness Scorecard for Startups and SMEs.</li>
+            <li>Automation Opportunity Audit for Sales, HR, and Operations.</li>
+            <li>30-Day AI Growth Roadmap tailored to your business model.</li>
+            <li>Industry-specific AI use-case blueprint for your team.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>H2: Contact Page | Book Your Free Consultation</h2>
+      <div class="grid-2">
+        <article class="card">
+          <h3>H3: Let’s Build Your AI Advantage</h3>
+          <p>
+            Share your business goals, current challenges, and tools you use. Our team will propose a clear, practical AI roadmap with fast-win opportunities and scalable implementation options.
+          </p>
+          <p>
+            Free consultation includes opportunity mapping, process recommendations, and next-step execution priorities.
+          </p>
+        </article>
+        <article class="card">
+          <h3>H3: Contact Form</h3>
+          <form class="contact-form" action="#" method="post" onsubmit="event.preventDefault(); alert('Thank you. Your consultation request has been captured.');">
+            <input type="text" name="name" placeholder="Full Name" required />
+            <input type="email" name="email" placeholder="Work Email" required />
+            <input type="text" name="company" placeholder="Company Name" required />
+            <select name="service" required>
+              <option value="">Select a Service</option>
+              <option>AI Automation Solutions</option>
+              <option>Custom AI Chatbots</option>
+              <option>AI for Marketing</option>
+              <option>AI for HR and Recruitment</option>
+              <option>AI for Data Analysis</option>
+              <option>Custom Enterprise AI Solutions</option>
+            </select>
+            <textarea name="message" placeholder="Tell us your biggest business challenge."></textarea>
+            <button type="submit" class="btn btn-primary">Get Free Consultation</button>
+          </form>
+        </article>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container">© <span id="year"></span> Hetvi Mistry • Built with HTML/CSS/JS</div>
+    <div class="container">AIVORA | AI Solutions Agency for Indian and International Businesses</div>
   </footer>
-
-  <script>
-    // Set current year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Smooth scroll for internal links
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        const target = document.querySelector(a.getAttribute('href'));
-        if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth', block:'start'}); }
-      });
-    });
-  </script>
 </body>
 </html>
